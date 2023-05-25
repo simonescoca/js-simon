@@ -1,0 +1,12 @@
+header{
+    padding-top: 6rem;
+}
+
+main{
+    height: 20vh;
+}
+
+.my_timer-container{
+    margin: auto;
+    font-family: monospace;
+}
