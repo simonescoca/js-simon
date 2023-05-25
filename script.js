@@ -12,6 +12,12 @@
 // Esiste un oggetto JS in grado di gestire le date?
 // Esistono dei metodi per trasformare una data in millisecondi?
 
+// const str = '5';
+
+// console.log(str1.padStart(2, '0'));
+// Expected output: "05"
+
+const sectionElement = document.getElementById ("timer")
 
 const countDown = setInterval (
     function() {
@@ -28,8 +34,14 @@ const countDown = setInterval (
 
         minutes = minutes % 60
 
-        const timeFormat = hours + ":" + minutes + ":" + seconds
+        seconds = seconds + ""
+        minutes = minutes + ""
+        hours = hours + ""
+
+        const timeFormat = hours.padStart(2, "0") + ":" + minutes.padStart(2, "0") + ":" + seconds.padStart(2, "0")
         console.log (timeFormat)
+
+        sectionElement.innerHTML = timeFormat
 
     }, 1000
 )
