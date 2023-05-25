@@ -13,7 +13,27 @@
 // Esistono dei metodi per trasformare una data in millisecondi?
 
 
-const countDown = setInterval (quantoMancaADomattina, 1000)
+const countDown = setInterval (
+    function() {
+        let seconds = quantoMancaADomattina()
+        // console.log(seconds)
+
+        let minutes = Math.floor (seconds / 60)
+        // console.log (minutes)
+
+        let hours = Math.floor (minutes / 60)
+        // console.log (hours)
+
+        seconds = seconds % 60
+
+        minutes = minutes % 60
+
+        const timeFormat = hours + ":" + minutes + ":" + seconds
+        console.log (timeFormat)
+
+    }, 1000
+)
+
 
 // FUNCTIONS /////////////////////////////
 
@@ -59,6 +79,5 @@ function quantoMancaADomattina () {
     let domaniMattina = domattinaTimestamp()
     let insomma = quantoMancaADataFutura (domaniMattina, ora)
 
-    console.log (insomma)
     return insomma
 }
